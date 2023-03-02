@@ -20,8 +20,9 @@ U = zeros(2*((2*nely+1)*nelx+nely+1),1);
 fixeddofs = union([1:1:2*(nely+1)],[1]);  
 alldofs = [1:2*((2*nely+1)*nelx+nely+1)];  
 freedofs = setdiff(alldofs,fixeddofs);
-
-fixed_E=find(xPhys<=0.1); % avoid the deleted struts in subdivision to participate in simplification
+fixed_E = 1:nely;
+fix_A_0=find(xPhys<=0.1);% avoid the deleted struts in subdivision to participate in simplification
+fixed_E=[fixed_E';fix_A_0];
 A(fixed_E)=0;
 v0=sum(L*A0);
 
@@ -167,13 +168,13 @@ end
 function Nx_down=A_nodes_down(num,nelx,nely)
 num1=(2*nely+1)*nelx+nely+1;
 iter = 1;
-dim=num-3*(nelx-1)-4; %考虑悬空的杆数
+dim=num-3*(nelx-1)-4; %consider the number of overhang struts
 iM = zeros(dim,1);
 jM = zeros(dim,1);
 vM = ones(dim,1);
 i1=(2*nely+1)*nelx;
 i2=5*nely*nelx-nely;
-for i=2:nely %左右两边界
+for i=2:nely %boundary
     it = i; % index of the element
     t=i;
     iM(iter) = it;
