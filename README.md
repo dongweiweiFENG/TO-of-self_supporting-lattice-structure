@@ -1,5 +1,7 @@
 # TO-of-self_supporting-lattice-structure
 ## Overview
+![image](https://user-images.githubusercontent.com/124340386/222344483-1dfee260-ba56-40e5-b67c-84c25b1f10cf.png)
+
 ## Abstract
 This paper presents a method to generate self-supporting lattice structures in a topology optimization (TO) framework.
 Our method is composed of two phases, which are the TO-based subdivision and the TO-based simplification. Starting
