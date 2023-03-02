@@ -17,14 +17,14 @@ pNorm = 16;
 
 A0=pi;
 l=3*ceil(sqrt(A0/pi));
-%存储杆的长度
+%the vector of struts length
 L=ones(1,5*nely*nelx+nely)*l;
 for i=1:4*nely
     L(1,nely+i:5*nely:end)=l*sqrt(2)/2;
 end
 v0=sum(L*A0);
 
-%存储节点坐标V
+%Coordinates corresponding to nodes：V
 X = repmat(0:l:nelx*l, nely+1, 1);
 X1=repmat(l/2:l:nelx*l, nely, 1);
 X = flipud(X);
@@ -45,13 +45,12 @@ for i=1:length(V)
         V(i,:)=V0(floor(i/(nelx+1))*(nelx/2+1)+rem(i,(nelx+1)),:);
     end
 end
-%存储初始
 
-nLevels = log2(nely);  %k_bar
+nLevels = log2(nely);  %The maximal subdivision level
 % Cell dimension
 nc0 = 2^nLevels;   % Coarset cell, e.g., nc0*nc0 = 32*32  --2^m
 nc = zeros(nLevels,1); 
-for level = 1:nLevels   %k
+for level = 1:nLevels   %k-th cell numbers
     nc(level) = nc0/(2^(level-1));
 end
 
@@ -85,9 +84,9 @@ hp = h;
 % Design variables converted to black-white design
 hbw = h;
 
-%%
-num_x = 5*nely*nelx+nely;
-[M0x] = buildSparseM0x(nx,ny,nc0,nelx,nely,num_x);
+num_x = 5*nely*nelx+nely; % the total number of struts
+%%the matrix that connect the state variables and struts
+[M0x] = buildSparseM0x(nx,ny,nc0,nelx,nely,num_x); 
 [Mx] = buildSparseMx(nLevels,nc,nx,ny,nelx,nely,num_x);  
 
 [xFix] = designToX(M0x,h0,Mx,nLevels,h);
