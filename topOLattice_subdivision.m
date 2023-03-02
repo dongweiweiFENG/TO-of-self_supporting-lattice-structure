@@ -1,7 +1,6 @@
 % topOLattice_subdivision(128,64,0.5,1,400)
 function [V,E,A,L,xPhys,cList,vList]=topOLattice_subdivision(nelx,nely,volfrac,bBlackWhite,ItMax)
-% bSubdivision: 1 - subdivision
-%               2 - balanced subdivision
+
 clc;
 close all;
 MMA = 1;
