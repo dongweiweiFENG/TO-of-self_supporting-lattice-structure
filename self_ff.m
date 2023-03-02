@@ -1,3 +1,4 @@
+% self_supporting filter
 function x_new=self_ff(xnew,nely,nx,ny,nlevels,nc,pNorm)
 ii0=5*nely;
 x_new=xnew;
