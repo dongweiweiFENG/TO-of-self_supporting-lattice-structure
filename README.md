@@ -3,7 +3,10 @@
 ![image](https://user-images.githubusercontent.com/124340386/222349655-d4113531-157c-4424-a1c8-a7f7aa017ab0.png)
 
 ![image](https://user-images.githubusercontent.com/124340386/222351163-927c871b-0e23-46e8-bafc-71dda1a7d818.png)
-
+the density-based 3D topology optimization method (3DTop)  
+the TO method with self-supporting filter (SS3DTop)
+the results of the ground lattice structure (GLS)
+the direct simplification on ground lattice structure(DSGLS)
 
 ## Abstract
 This paper presents a method to generate self-supporting lattice structures in a topology optimization (TO) framework.
