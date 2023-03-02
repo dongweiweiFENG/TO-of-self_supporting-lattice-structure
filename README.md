@@ -1,5 +1,5 @@
 # TO-of-self_supporting-lattice-structure
-#Overview
-#Abstract
-#Usage
-#Contact Information
+# Overview
+# Abstract
+# Usage
+# Contact Information
