@@ -1,3 +1,4 @@
+%calculate the gradient information after self-supporting filter in subdivision
 function [df0,dfv]=self_dc_dv(df0dx,dfdx,xPhys,nely,nx,ny,nlevels,nc,pNorm)
 ii0=5*nely;
 df0=df0dx;
