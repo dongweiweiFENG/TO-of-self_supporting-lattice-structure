@@ -1,6 +1,7 @@
 # TO-of-self_supporting-lattice-structure
 ## Overview
-![image](https://user-images.githubusercontent.com/124340386/222345682-622728be-1d8e-4f8f-a50a-1e9c40b043a2.png)
+![image](https://user-images.githubusercontent.com/124340386/222349655-d4113531-157c-4424-a1c8-a7f7aa017ab0.png)
+
 ![image](https://user-images.githubusercontent.com/124340386/222345800-b7260045-6da4-412e-8e4d-de8a0d3baa4d.png)
 
 
@@ -20,6 +21,6 @@ The code what we provide is for 2D examples which is easy to implement for ordin
 If you want to run the code, first make sure that MATLAB is installed on the computer. Then you need to download all .m files to your local folder. Through topOLAttice_ Subdivision .m file can realize the first step of segmentation and store the subdivision data in 2d_subdivision.mat file, and then use the topOLAttice_simplification .m file implements the second step of simplification.
 
 ## Contact Information
-Weiming Wang(WWMdlut@gmail.com)
-Dongwei Feng(dutshuxuefeng@163.com)
+Weiming Wang(WWMdlut@gmail.com)  
+Dongwei Feng(dutshuxuefeng@163.com)  
 Charlie C.L. Wang (changling.wang@manchester.ac.uk)
