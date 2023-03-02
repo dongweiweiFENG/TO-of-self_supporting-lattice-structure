@@ -1,3 +1,4 @@
+% the elements stiffness matrix and the relationship of nodes and struts(edofMat)
 function [ssk,edofMat]=Bar2D_Stiffness1_2_new(x1,x3,x4,nelx,nely,E0,A0,l) 
 %竖直方向
 C1=cos(x1); 
