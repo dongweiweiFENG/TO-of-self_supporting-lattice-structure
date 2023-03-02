@@ -15,7 +15,8 @@ tests demonstrate that our method can effectively generate self-supporting latti
 strength.
 ## Usage
 The code what we provide is for 2D examples which is easy to implement for ordinary Chixian personal notebook computer.
-If you want to run the code, first make sure that MATLAB is installed on the computer. Then you need to download all .m files to your local folder. Through topOLAttice_ Subdivision .m file can realize the first step of segmentation and store the subdivision data in 2d_subdivision.mat file, and then use the topOLAttice_simplification .m file implements the second step of simplification.  The optimization problem is also solved by the method of moving asymptotes (MMA).
+If you want to run the code, first make sure that MATLAB is installed on the computer. Then you need to download all .m files to your local folder. Through topOLAttice_ Subdivision .m file can realize the first step of segmentation and store the subdivision data in 2d_subdivision.mat file, and then use the topOLAttice_simplification .m file implements the second step of simplification.  The optimization problem is also solved by the method of moving asymptotes (MMA). If you want know more about MMA, you can read the peaper "The method of moving asymptotes—a new method for structural optimization, International journal for numerical methods in
+engineering".
 
 
 ## Contact Information
