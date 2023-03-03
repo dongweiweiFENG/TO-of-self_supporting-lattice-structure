@@ -1,5 +1,5 @@
 %[A,xPhys,L,V,E,cList,vList,sList]=topOLattice_simplification(128,64,1200,0.4);
-
+%====output=======
 % A -- the vector about cross-section of struts
 % xPhys -- the vector about the density of struts
 % L -- the vector about the length of struts
@@ -8,6 +8,8 @@
 % cList -- the iterative compliance information
 % vList -- the iterative volume information
 % sList -- the iterative self-supporting information
+
+%====input=======
 % nelx x nely -- the resolution about the ground lattice structure
 % ItMax -- the total iteration steps
 % volfraction -- the volume fraction
