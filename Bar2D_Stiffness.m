@@ -1,4 +1,12 @@
-%
+% the stiffness matrix of the struts and the information about the nodes and struts(edofMat)
+% ssk -- the stiffness matrix of the struts
+% edofMat -- the information about the nodes and struts
+
+% x1,x3,x4 is the angles about the struts and printing direction
+% nelx x nely is the resolution of the ground lattice structure
+% E0 is the Young's modulus of the struts
+% A0 is the initial cross-section of the struts
+% l is the length of the minimum struts in the virtical direction
 function [ssk,edofMat]=Bar2D_Stiffness(x1,x3,x4,nelx,nely,E0,A0,l) 
 %x0=0
 C1=cos(x1); 
