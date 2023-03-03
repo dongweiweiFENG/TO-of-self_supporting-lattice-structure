@@ -1,4 +1,17 @@
 % the elements stiffness matrix and the relationship of nodes and struts(edofMat)
+% =====output======
+% ssk -- the information about matrix of the struts
+% edofMat -- the information about the relationship about the nodes and struts
+
+% =====input=======
+% x1,x2,x3 is the angle of the struts about the printing direction
+% nelx x nely is the resolution of the ground lattice structure
+% E0 is the Young's modulus of the struts
+% A0 is the initial cross-section
+% l is the length of the minimum length of the virtical struts
+
+% ====example========
+% [ssk,edofMat]=Bar2D_Stiffness1_2_new(0,-pi/4,pi/4,128,64,1,pi,6)
 function [ssk,edofMat]=Bar2D_Stiffness1_2_new(x1,x3,x4,nelx,nely,E0,A0,l) 
 %vertical direction x1=0
 C1=cos(x1); 
