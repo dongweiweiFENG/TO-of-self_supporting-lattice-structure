@@ -4,8 +4,18 @@
 % dcx is the gradient information about the density variable of the compliance
 
 % ====input==========
-% ssk is the 
-function [c,dcx]=K_2D_p(ssk,iK,jK,num,F,freedofs,xPhys,edofMat,p,U)
+% ssk -- the information about matrix of the struts
+% edofMat -- the information about the relationship about the nodes and struts
+% xPhys is the density of the struts
+% num is the number of the struts
+% F is the external force vector
+% freedofs is the degree of freedom vector of nodes
+% p is the penalization parameter
+% U is the global displacement vector
+
+function [c,dcx]=K_2D_p(ssk,num,F,freedofs,xPhys,edofMat,p,U)
+iK = reshape(kron(edofMat,ones(4,1))',16*num,1);
+jK = reshape(kron(edofMat,ones(1,4))',16*num,1);
 [x,dx]=SIMP(xPhys,p);
 x0=kron(x,ones(4,1))';
 sk=ssk.*(x0+1e-12);
