@@ -14,7 +14,10 @@ manufacturability of the resultant structures. Our method has been tested on bot
 tests demonstrate that our method can effectively generate self-supporting lattice structures with stronger mechanical
 strength.
 ## Usage
-Here we provide the Matlab codes for 2D self-supporting lattice structure generation. The code can be run on a laptop computer. First, you just need to run [V,E,A,L,xPhys,cList,vList] = topOLattice_subdivision(nelx,nely,volfrac,bBlackWhite,ItMax) to generate an initial structure, and the result will be stored as 2d_subdivision.mat. Then you need to run [A, xPhys, L, V, E, cList, vList, sList] = topOLattice_simplification (nelx, nely, ItMax, volfrac) to get the final structure. Both optimization problems are solved by the method of moving asymptotes (MMA). For the code, you can write email to the authors of the paper "The method of moving asymptotes—a new method for structural optimization ".
+Here we provide the Matlab codes for 2D self-supporting lattice structure generation. The code can be run on a laptop computer.   
+First, you just need to run [V,E,A,L,xPhys,cList,vList] = topOLattice_subdivision(nelx,nely,volfrac,bBlackWhite,ItMax) to generate an initial structure, and the result will be stored as 2d_subdivision.mat.   
+Then you need to run [A, xPhys, L, V, E, cList, vList, sList] = topOLattice_simplification (nelx, nely, ItMax, volfrac) to get the final structure.   
+Both optimization problems are solved by the method of moving asymptotes (MMA). For the code, you can write email to the authors of the paper "The method of moving asymptotes—a new method for structural optimization ".
 
 
 ## Contact Information
