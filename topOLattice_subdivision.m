@@ -1,4 +1,17 @@
 % topOLattice_subdivision(128,64,0.5,1,400)
+
+% V -- the coordinate of the nodes
+% E -- the information about the nodes connected to the struts and the length of the struts
+% A -- the vector about cross-section of struts
+% L -- the vector about the length of struts
+% xPhys -- the vector about the density of struts
+% cList -- the iterative compliance information
+% vList -- the iterative volume information
+% nelx x nely -- the resolution about the ground lattice structure
+% volfraction -- the volume fraction
+% bBlackWite -- 0 for no heaviside projection and 1 for heaviside projection
+% ItMax -- the total iteration steps
+
 function [V,E,A,L,xPhys,cList,vList]=topOLattice_subdivision(nelx,nely,volfrac,bBlackWhite,ItMax)
 
 clc;
@@ -293,17 +306,6 @@ while loop < ItMax && change>=0.0001
     %% PRINT RESULTS
     fprintf(' It.:%5i Obj.:%11.4f Vol.:%11.4f ch.:%7.3f, Sharpness: %7.3f\n',loop,c, ...
         v/ (sum(A0*L)),change,sharp);
-%     %% PLOT DENSITIES
-%     if rem(loop,400)==0
-%         save 2d_subdivision;
-%         A=A0*xPhys;
-%         figure(kkk);
-%         clf;
-%         D=2*sqrt(A0/pi*xPhys);
-%         drawframe(V,E,D,[0.5,0.5,0.5]);
-%         set(gcf,'color','w');
-%         kkk=kkk+1;
-%     end
 end
 %% PLOT DENSITIES
 clearvars -except V E A L xPhys A0
@@ -371,12 +373,6 @@ for level = 2:nLevels
         for j=1:ny(level)
             it = (j-1)*nx(level)+(i-1)+1;
             ic = (floor((j+1)/2)-1)*nx(level-1) + (floor((i+1)/2)-1) + 1;
-%             hde{level}(it,level-1) = ic;
-%             if level > 2
-%                 for ii = 1:(level-2)
-%                     hde{level}(it, ii) = hde{level-1}(ic,ii);
-%                 end
-%             end
             if rem(i,2) == 0
                 ix = i+1;
             else
@@ -504,17 +500,6 @@ for level = 2:nLevels
                 ic = hde{level}(it, ii);
                 de(ii,1) = h{ii}(ic);
             end
-            
-%             hp{level}(it) = 0;
-%             for ii = 1:level
-%                 hp{level}(it) = hp{level}(it) + (1-de(ii,1))^pNorm;
-%             end
-%             A = max(hp{level}(it) / level, 10^(-8));
-%             hp{level}(it) = 1 - (hp{level}(it) / level)^(1/pNorm);
-% 
-%             for ii = 1:level
-%                 hdeCo{level}(it,ii) = A^((1/pNorm)-1)*(1-de(ii,1)^(pNorm-1))/level;
-%             end
             hp{level}(it) = 0;
             for ii = 1:level
                 hp{level}(it) = hp{level}(it) + (de(ii,1))^(-pNorm);
@@ -551,18 +536,6 @@ for level = 2:nLevels
                 iLevel = hdeExiLevels{level}(it,ii);
                 de(ii) = h{iLevel}(ic);
             end
-
-%             hp{level}(it) = 0;
-%             for ii = 1:(numEx+1)
-%                 hp{level}(it) = hp{level}(it) + (1-de(ii))^pNorm;
-%             end
-%             
-%             A = hp{level}(it) / (numEx+1);
-%             hp{level}(it) = 1 - (hp{level}(it) / (numEx+1))^(1/pNorm);
-%             
-%             for ii = 1:(numEx+1)
-%                 hdeExCo{level}(it,ii) = A^((1/pNorm)-1)*(1-de(ii)^(pNorm-1))/(numEx+1);
-%             end
             hp{level}(it) = 0;
             for ii = 1:(numEx+1)
                 hp{level}(it) = hp{level}(it) + (de(ii))^(-pNorm);
