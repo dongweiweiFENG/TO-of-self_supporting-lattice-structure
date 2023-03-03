@@ -96,7 +96,6 @@ hp = h;
 % Design variables converted to black-white design
 hbw = h;
 
-%%
 num_x = 5*nely*nelx+nely;% the total number of struts
 
 % the matrix that connect the state variables and struts density
@@ -141,8 +140,7 @@ E0 = 1;
 e=edofMat(:,[2,4])/2;
 E=[e,L']; %the struts information about its connected nodes and  length
 num=5*nely*nelx+nely;
-iK = reshape(kron(edofMat,ones(4,1))',16*num,1);
-jK = reshape(kron(edofMat,ones(1,4))',16*num,1);
+
 % DEFINE LOADS AND SUPPORTS (HALF MBB-BEAM)
 F = sparse(2*((2*nely+1)*nelx+nely+1),1,-1,2*((2*nely+1)*nelx+nely+1),1); %-nely
 U = zeros(2*((2*nely+1)*nelx+nely+1),1);
