@@ -1,4 +1,10 @@
 % Calculate compliance and corresponding gradient information
+% ===output==========
+% c is the compliance
+% dcx is the gradient information about the density variable of the compliance
+
+% ====input==========
+% ssk is the 
 function [c,dcx]=K_2D_p(ssk,iK,jK,num,F,freedofs,xPhys,edofMat,p,U)
 [x,dx]=SIMP(xPhys,p);
 x0=kron(x,ones(4,1))';
