@@ -26,7 +26,7 @@ sList = zeros(ItMax,1);
 load 2d_subdivision;% input the subdivision data
 A0=pi;l=3*ceil(sqrt(A0/pi));
 num=length(xPhys);
-[ssk,edofMat]=Bar2D_Stiffness1_2_new(-pi/2,-pi/4,pi/4,nelx,nely,E0,A0,l);
+[ssk,edofMat]=Bar2D_Stiffness(-pi/2,-pi/4,pi/4,nelx,nely,E0,A0,l);
 % DEFINE LOADS AND SUPPORTS (HALF MBB-BEAM)
 F = sparse(2*((2*nely+1)*nelx+nely+1),1,-1,2*((2*nely+1)*nelx+nely+1),1); %-nely
 U = zeros(2*((2*nely+1)*nelx+nely+1),1);
