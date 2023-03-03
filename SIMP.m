@@ -1,3 +1,5 @@
+%  the penalization of the struts density
+% p is the penalization parameter
 function [x,dx]=SIMP(xPhys,p)
 indx1=xPhys-1>=0;
 indx2=xPhys-1<0;
