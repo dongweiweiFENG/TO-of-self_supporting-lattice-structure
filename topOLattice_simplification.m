@@ -27,8 +27,6 @@ load 2d_subdivision;% input the subdivision data
 A0=pi;l=3*ceil(sqrt(A0/pi));
 num=length(xPhys);
 [ssk,edofMat]=Bar2D_Stiffness1_2_new(-pi/2,-pi/4,pi/4,nelx,nely,E0,A0,l);
-iK = reshape(kron(edofMat,ones(4,1))',16*(5*nely*nelx+nely),1);
-jK = reshape(kron(edofMat,ones(1,4))',16*(5*nely*nelx+nely),1);
 % DEFINE LOADS AND SUPPORTS (HALF MBB-BEAM)
 F = sparse(2*((2*nely+1)*nelx+nely+1),1,-1,2*((2*nely+1)*nelx+nely+1),1); %-nely
 U = zeros(2*((2*nely+1)*nelx+nely+1),1);
@@ -88,7 +86,7 @@ while loop < ItMax
         s_0=Shx; % can slightly change the value of s_0 to keep self-supporting
         s_1=Shx;
     end
-    [c,dcx]=K_2D_p(ssk,iK,jK,num,F,freedofs,xPhys,edofMat,p,U);
+    [c,dcx]=K_2D_p(ssk,num,F,freedofs,xPhys,edofMat,p,U);
     dvx=L*A0/(v0*volfrac);
     
     cList(loop) = c;
