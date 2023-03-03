@@ -1,5 +1,10 @@
 %  the penalization of the struts density
+%======input===========
+% xPhys is the density of the struts
 % p is the penalization parameter
+
+%======output===========
+% x and dx is the dnesity and gradient information after penalization
 function [x,dx]=SIMP(xPhys,p)
 indx1=xPhys-1>=0;
 indx2=xPhys-1<0;
