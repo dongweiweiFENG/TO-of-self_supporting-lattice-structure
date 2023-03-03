@@ -12,7 +12,7 @@
 
 % ====example========
 % [ssk,edofMat]=Bar2D_Stiffness1_2_new(0,-pi/4,pi/4,128,64,1,pi,6)
-function [ssk,edofMat]=Bar2D_Stiffness1_2_new(x1,x3,x4,nelx,nely,E0,A0,l) 
+function [ssk,edofMat]=Bar2D_Stiffness(x1,x3,x4,nelx,nely,E0,A0,l) 
 %vertical direction x1=0
 C1=cos(x1); 
 S1=sin(x1); 
