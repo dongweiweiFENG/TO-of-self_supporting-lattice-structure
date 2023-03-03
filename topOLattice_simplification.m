@@ -1,4 +1,17 @@
 %[A,xPhys,L,V,E,cList,vList,sList]=topOLattice_simplification(128,64,1200,0.4);
+
+% A -- the vector about cross-section of struts
+% xPhys -- the vector about the density of struts
+% L -- the vector about the length of struts
+% V -- the coordinate of the nodes
+% E -- the information about the nodes connected to the struts and the length of the struts
+% cList -- the iterative compliance information
+% vList -- the iterative volume information
+% sList -- the iterative self-supporting information
+% nelx x nely -- the resolution about the ground lattice structure
+% ItMax -- the total iteration steps
+% volfraction -- the volume fraction
+
 function [A,xPhys,L,V,E,cList,vList,sList]=topOLattice_simplification(nelx,nely,ItMax,volfrac)
 bBlackWhite=1;
 E0=1;
@@ -171,13 +184,13 @@ end
 function Nx_down=A_nodes_down(num,nelx,nely)
 num1=(2*nely+1)*nelx+nely+1;
 iter = 1;
-dim=num-3*(nelx-1)-4; %考虑悬空的杆数
+dim=num-3*(nelx-1)-4; %the considered number of overhang struts
 iM = zeros(dim,1);
 jM = zeros(dim,1);
 vM = ones(dim,1);
 i1=(2*nely+1)*nelx;
 i2=5*nely*nelx-nely;
-for i=2:nely %左右两边界
+for i=2:nely %boundary
     it = i; % index of the element
     t=i;
     iM(iter) = it;
