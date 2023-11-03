@@ -1,4 +1,4 @@
-%[V,E,A,L,xPhys]=topOLattice_simplification(16,8,8,0.06,1,1000);
+%[V,E,A,L,xPhys]=topOLattice_simplification_3d(32,16,16,0.06,1,1000);
 %====output=======
 % V -- the coordinate of the nodes
 % E -- the information about the nodes connected to the struts and the length of the struts
